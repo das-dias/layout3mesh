@@ -8,7 +8,7 @@ from layout3mesh.layout3mesh import load_layout, load_layerstack, render_to_mesh
 from layout3mesh.data import LayerStack
 
 def test_version():
-    assert __version__ == '0.1.0'
+    assert __version__ == '0.1.2'
 
 
 def test_load_layout():
