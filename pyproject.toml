@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "layout3mesh"
+version = "0.1.0"
+description = "A tool to generate 3D meshes from 2D integrated circuit layouts"
+authors = ["dasdias <das.dias6@gmail.com>"]
+repository = "https://github.com/das-dias/layout3mesh"
+readme = "README.md"
+license = "GPLv2"
+keywords = ["layout", "3D-mesh", "gds2", "oasis"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+trimesh = "^3.23.1"
+shapely = "^2.0.1"
+PyYAML = "^6.0.1"
+gdstk = "^0.9.42"
+mapbox-earcut = "^1.0.1"
+scipy = "^1.11.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pytest-cov = "^4.1.0"
+black = "^23.7.0"
+
+[tool.poetry.scripts]
+layout2svg = "layout2svg.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.autohooks]
+mode = "pipenv"
+pre-commit = ["autohooks.plugins.black"]
+
+[tool.autohooks.plugins.black]
+arguments = ["--fast"]
+
+# convertion from pyproject to setup.py
+[tool.dephell.main]
+from={fromat="poetry", path="pyproject.toml"}
+to={format="setuppy", path="setup.py"}

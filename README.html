@@ -1,0 +1,41 @@
+<h1 align="center">
+layout3mesh
+</h1>
+<div data-align="justify">
+<p>
+This is a simple tool to convert an integrated circuit layout saved in
+OASIS / GDSII file format to a mesh 3D image file. The tool supports
+direct export of the 3D mesh file into the Blender desktop app. This
+tool was written with the goal of rendering any layout in 3D inside a
+desktop or web application using WebGL.
+</p>
+</div>
+<h2 align="center">
+Installation
+</h2>
+<h3 align="center">
+MacOS, Linux, Windows
+</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install layout3mesh</span></code></pre></div>
+<h2 align="center">
+Usage - Command Line Interface
+</h2>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">layout3mesh</span> <span class="at">-i</span> <span class="op">&lt;</span>input_file_path [.gds/.oas]<span class="op">&gt;</span> -o <span class="op">&lt;</span>output_file_path [.gltf]<span class="op">&gt;</span> -t <span class="op">&lt;</span>layerstack_file_path [.ymls]<span class="op">&gt;</span></span></code></pre></div>
+<h2 align="center">
+Examples
+</h2>
+<p>
+Running the example with the mock layerstack file and layout provided in
+the <a href="tests/data/">examples</a>, by running the following
+command:
+</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">layout3mesh</span> <span class="at">-i</span> ./tests/data/crossed_metal.gds <span class="at">-t</span> ./tests/data/mock_layers.ymls <span class="at">-o</span> ./tests/data/crossed_metal.gltf</span></code></pre></div>
+<p>
+can generate the following 3D image:
+</p>
+<p align="center">
+<p><img src="tests/data/crossed_metal.gif" width=70%/></p>
+</p>

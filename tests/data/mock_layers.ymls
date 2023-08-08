@@ -1,0 +1,81 @@
+# .YMLS - A YAML file format dedicated
+# to serve as a multi purpose file
+# for bundling semiconductor technology 
+# information together in a single file
+library: # library metadata
+  name: mock_tech
+  version: v1.0
+  description: A mocking technology layerstack using the .ymls (fancy yaml...) format
+  author: Diogo André
+units:
+  db  : 1000.0e-6 # database maximum length/width in meters
+  dbu : 1.0e-6 # space unit in meters
+  sec : 1.0e-9 # time unit in nanoseconds 
+  ohm : 1.0 # impedance in ohms
+  far : 1.0e-15 # capacitance in picofarad pF
+  amp : 1.0e-3 # current in ampere
+  volt: 1.0 # voltage in volt
+
+grid: 0.0050  # finest space between two points of the db in db units
+
+layers:
+  # mcon and poly missing ... it's ok, it's just an example :')
+  met1:
+    metadata:       # visualization-specific properties
+      type: routing
+      keys: [Metal1, M1] # key identifiers of the layer
+      # rgb will be used as fill and edge color by default
+      rgba: [0, 191, 255, 180] # RGBA color
+      text: '\\' # texture
+# possible textures: '' '\\' '/\' '_|' '//' '..'
+    properties:     # Technology-specific properties
+      ly    : 2     # layer id integer
+      dt    : 0     # datatype id integer
+      zh    : 1.3761   # Z-height of the layer (in micrometers)
+      th    : 0.3600   # Thickness of the layer (in micrometers)
+      mw    : 0.1400  # minimum width of a metal in this layer
+      sqrres: 0.1250   # Sheet resistance (in ohms/square)
+      dc_avgcd : 2.8000 # Max cross-sectional superficial DC current density mA / um @ 90oC
+      ac_rmscd : 6.10000 # MAx cross-sectional superfitial RMS AC current density mA / um  @ 90oC
+      sqrcap: 2.1000   # Capacitance per length @ minimum width (in fF / um )
+  
+  via:
+    metadata:
+      type: cut
+      keys: [Via, M1M2Via, ViaM2M1]
+      rgba: [0, 190, 0, 180]
+      text: '..'
+    properties:
+      top   : met2
+      bot   : met1 # bot and top used for finding the z-height and thickness of the via!
+      w     : 0.1500 # width - is fixed !
+      ly    : 2
+      dt    : 1
+      res   : 4.5000 # resistance (ohm) per via
+      thc1  : 0.001081 # first temperature coefficient THC1
+      thc2  : -1.90e-7 # second temperature coefficient THC2
+      dc_avgcd : 0.2900 # mA per via - note that it is not mA / um, once the vias has a fixed width!
+
+  met2:
+    metadata:       
+      type: routing
+      keys: [Metal2, M2]
+      rgba: [255, 190, 0, 180]
+      text: '_|'
+    properties:     
+      ly    : 3     
+      dt    : 0     
+      zh    : 2.0061 
+      th    : 0.3600   
+      mw    : 0.1400  
+      sqrres: 0.1250   
+      dc_avgcd : 2.8000 
+      ac_rmscd : 6.1000 
+      sqrcap: 2.1000
+
+# other fields can go under here...
+# you can add any other information
+# you find necessary for the description
+# of your tech node. this might especially
+# useful for describing integrated 
+# photonics tech node-related content!
