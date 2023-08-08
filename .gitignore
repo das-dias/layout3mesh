@@ -1,3 +1,4 @@
 layout2gltf.log
 scripts
 dist
+tests/data/*.glb
