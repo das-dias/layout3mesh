@@ -1,7 +1,7 @@
 <h1 align=center> layout3mesh </h1>
 
 <div align=justify>
-<p> This is a simple tool to convert an integrated circuit layout saved in OASIS / GDSII file format to a mesh 3D image file. The tool supports direct export of the 3D mesh file into the Blender desktop app. This tool was written with the goal of rendering any layout in 3D inside a desktop or web application using WebGL. </p>
+<p> This is a simple tool to convert an integrated circuit layout saved in OASIS / GDSII file format to a mesh 3D image file. The tool doesn't support direct export of the 3D mesh file into the Blender desktop app just yet - but I am working on a solution. This tool was written with the goal of rendering any layout in 3D inside a desktop or web application using WebGL. </p>
 </div>
 
 <h2 align=center> Installation </h2>

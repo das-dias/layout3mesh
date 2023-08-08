@@ -59,7 +59,7 @@ colorama = {version = "*", markers = "platform_system == \"Windows\""}
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 
@@ -78,6 +78,14 @@ tomli = {version = "*", optional = true, markers = "python_full_version <= \"3.1
 toml = ["tomli"]
 
 [[package]]
+name = "docopt"
+version = "0.6.2"
+description = "Pythonic argument parser, that will make you smile"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "gdstk"
 version = "0.9.42"
 description = "Python module for creation and manipulation of GDSII files."
@@ -90,6 +98,21 @@ numpy = "*"
 
 [package.extras]
 docs = ["sphinx", "sphinx-rtd-theme", "sphinx-inline-tabs", "matplotlib"]
+
+[[package]]
+name = "loguru"
+version = "0.7.0"
+description = "Python logging made (stupidly) simple"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+colorama = {version = ">=0.3.4", markers = "sys_platform == \"win32\""}
+win32-setctime = {version = ">=1.0.0", markers = "sys_platform == \"win32\""}
+
+[package.extras]
+dev = ["mypy (==v0.910)", "tox (==3.27.1)", "pytest (==6.1.2)", "pytest-cov (==2.12.1)", "colorama (==0.4.5)", "freezegun (==1.1.0)", "mypy (==v0.971)", "pytest-mypy-plugins (==1.9.3)", "mypy (==v0.990)", "pre-commit (==3.2.1)", "tox (==4.4.6)", "pytest (==7.2.1)", "pytest-cov (==4.0.0)", "pytest-mypy-plugins (==1.10.1)", "colorama (==0.4.6)", "freezegun (==1.2.2)", "Sphinx (==5.3.0)", "sphinx-autobuild (==2021.3.14)", "sphinx-rtd-theme (==1.2.0)"]
 
 [[package]]
 name = "mapbox-earcut"
@@ -292,10 +315,21 @@ category = "dev"
 optional = false
 python-versions = "*"
 
+[[package]]
+name = "win32-setctime"
+version = "1.1.0"
+description = "A small Python utility to set file creation time on Windows"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+dev = ["pytest (>=4.6.2)", "black (>=19.3b0)"]
+
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9,<3.13"
-content-hash = "0a76192c0c69d9dd8fa5c482fabe0a44aa0ff3c53533a74331d4d404e17c6303"
+content-hash = "47c657f88c232a3927a3b4b0ce91b7c21a9d1ffaa8c6328d513cc94bf08f475f"
 
 [metadata.files]
 atomicwrites = []
@@ -304,7 +338,9 @@ black = []
 click = []
 colorama = []
 coverage = []
+docopt = []
 gdstk = []
+loguru = []
 mapbox-earcut = []
 more-itertools = []
 mypy-extensions = []
@@ -323,3 +359,4 @@ tomli = []
 trimesh = []
 typing-extensions = []
 wcwidth = []
+win32-setctime = []

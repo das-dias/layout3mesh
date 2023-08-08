@@ -17,7 +17,6 @@ _LAYERSTACK_FILE_EXTENSIONS = [".yaml", ".yml", ".ymls"]
 
 _OUT_FILE_EXTENSIONS = [".gltf", ".glb", ".obj", ".stl", ".ply", ".urdf"]
 
-
 def load_layout(fp: str) -> Optional[gdstk.Library]:
     """Load a layout from a GDSII file.
     Args:

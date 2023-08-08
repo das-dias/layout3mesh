@@ -108,7 +108,7 @@ def main():
             logger.success("Rendered to 3D Object: ", out_file)
     if render_to_blender:
         cmd = [BLENDER_BIN]
-        with tempfile.NamedTemporaryFile(suffix=".gltf") as f:
+        with tempfile.NamedTemporaryFile(suffix=".blend") as f:
             try:
                 render_to_mesh(layout, layerstack, topcell=topcell_name, out=f.name)
             except Exception as e:
